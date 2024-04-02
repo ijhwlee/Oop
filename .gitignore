@@ -34,4 +34,4 @@
 # MSVC intermediate files
 *.ilk
 *.pdb
-x64/Debug
+x64/Debug/
