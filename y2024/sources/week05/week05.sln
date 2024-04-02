@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "containerConstructor", "containerConstructor\containerConstructor.vcxproj", "{D1D83B02-76AA-4423-9C7C-BAC906589533}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "containerSize", "containerSize\containerSize.vcxproj", "{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "containerAccess", "containerAccess\containerAccess.vcxproj", "{31346E30-7306-4331-84D3-70545C19E004}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +25,22 @@ Global
 		{D1D83B02-76AA-4423-9C7C-BAC906589533}.Release|x64.Build.0 = Release|x64
 		{D1D83B02-76AA-4423-9C7C-BAC906589533}.Release|x86.ActiveCfg = Release|Win32
 		{D1D83B02-76AA-4423-9C7C-BAC906589533}.Release|x86.Build.0 = Release|Win32
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Debug|x64.ActiveCfg = Debug|x64
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Debug|x64.Build.0 = Debug|x64
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Debug|x86.ActiveCfg = Debug|Win32
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Debug|x86.Build.0 = Debug|Win32
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Release|x64.ActiveCfg = Release|x64
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Release|x64.Build.0 = Release|x64
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Release|x86.ActiveCfg = Release|Win32
+		{BDDDEEEE-739C-4896-B792-390ADEDD0ABC}.Release|x86.Build.0 = Release|Win32
+		{31346E30-7306-4331-84D3-70545C19E004}.Debug|x64.ActiveCfg = Debug|x64
+		{31346E30-7306-4331-84D3-70545C19E004}.Debug|x64.Build.0 = Debug|x64
+		{31346E30-7306-4331-84D3-70545C19E004}.Debug|x86.ActiveCfg = Debug|Win32
+		{31346E30-7306-4331-84D3-70545C19E004}.Debug|x86.Build.0 = Debug|Win32
+		{31346E30-7306-4331-84D3-70545C19E004}.Release|x64.ActiveCfg = Release|x64
+		{31346E30-7306-4331-84D3-70545C19E004}.Release|x64.Build.0 = Release|x64
+		{31346E30-7306-4331-84D3-70545C19E004}.Release|x86.ActiveCfg = Release|Win32
+		{31346E30-7306-4331-84D3-70545C19E004}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

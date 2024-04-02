@@ -1,38 +1,43 @@
-﻿// containerConstructor.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// containerAccess.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <map>
-#include <unordered_map>
 #include <vector>
+
+struct MyInt {
+  MyInt(int i) : myInt(i) {};
+  int myInt;
+};
 
 int main()
 {
-  std::vector<int> vec = { 1,2,3,4,5,6,7,8,9 };
-  std::map<std::string, int> str2Int = { {"bart", 12345},
-    {"jenne", 34929}, {"huber", 840284} };
-  std::unordered_map<std::string, int> str2Int2{ str2Int.begin(), str2Int.end() };
-  std::cout << " v = ";
-  for (auto v : vec)
+  std::vector<MyInt> myIntVec;
+  myIntVec.push_back(MyInt(5));
+  myIntVec.emplace_back(1);
+  std::cout << "mtIntVec.size() = " << myIntVec.size() << std::endl;
+  for (auto v : myIntVec)
+    std::cout << v.myInt << " ";
+  std::cout << std::endl;
+
+  std::vector<int> intVec;
+  intVec.assign({ 1,2,3,4,5 });
+  for (auto v : intVec)
     std::cout << v << " ";
   std::cout << std::endl;
-  std::cout << "str2Int = ";
-  for (auto m : str2Int)
-    std::cout << m.first << ", " << m.second << " ";
+  intVec.insert(intVec.begin(), 0);
+  for (auto v : intVec)
+    std::cout << v << " ";
   std::cout << std::endl;
-  std::cout << "str2Int2 = ";
-  for (auto m : str2Int2)
-    std::cout << m.first << ", " << m.second << " ";
+  intVec.insert(intVec.end(), {6,7,8,9,10,11});
+  for (auto v : intVec)
+    std::cout << v << " ";
   std::cout << std::endl;
-
-  std::vector<int> vec2 = vec;
-  std::cout << "vec.size() = " << vec.size() << std::endl;
-  std::cout << "vec2.size() = " << vec2.size() << std::endl;
+  for (auto revIt = intVec.rbegin(); revIt != intVec.rend(); ++revIt)
+    std::cout << *revIt << " ";
   std::cout << std::endl;
-
-  std::vector<int> vec3 = std::move(vec);
-  std::cout << "vec.size() = " << vec.size() << std::endl;
-  std::cout << "vec3.size() = " << vec3.size() << std::endl;
+  intVec.pop_back();
+  for (auto v : intVec)
+    std::cout << v << " ";
   std::cout << std::endl;
   return 0;
 }
