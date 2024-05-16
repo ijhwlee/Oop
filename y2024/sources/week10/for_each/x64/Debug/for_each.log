@@ -1,0 +1,16 @@
+﻿  for_each.cpp
+H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(18,12): warning C4244: 'return': 'const T'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(18,12): warning C4244:         with
+H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(18,12): warning C4244:         [
+H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(18,12): warning C4244:             T=double
+H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(18,12): warning C4244:         ]
+  H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(18,12):
+  템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+  	H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(32,81):
+  	컴파일되는 클래스 템플릿 인스턴스화 'ContainerInfo<double>'에 대한 참조를 확인하세요.
+  	H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(17,7):
+  	클래스 템플릿 멤버 함수 'int ContainerInfo<double>::getSum(void) const'을(를) 컴파일하는 중입니다.
+  		H:\hwlee\Source\Oop\y2024\week10\for_each\for_each.cpp(34,57):
+  		'main'에서 'ContainerInfo<double>::getSum'에 대한 첫 번째 참조를 확인하세요.
+  
+  for_each.vcxproj -> H:\hwlee\Source\Oop\y2024\week10\x64\Debug\for_each.exe
