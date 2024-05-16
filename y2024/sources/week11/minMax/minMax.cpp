@@ -18,7 +18,7 @@ std::string toString(int i) {
 int main()
 {
   std::vector<int> mtInts;
-  std::vector<std::string> myStrings{ "94", "5" };
+  std::vector<std::string> myStrings{ "94", "5", "39", "-4"};
   return 0;
 }
 
