@@ -2,10 +2,26 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
+
+bool isLessAbs(int a, int b) {
+  return std::abs(a) < std::abs(b);
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  std::vector<int> vec{ -3, 0, -3, 2, 5, -3, 7, -0, 6, -3, -5, 8, 9, 0, 8, 7, -7, 8, 9, -6, 3, -3, 2 };
+  std::cout << "Content of vec : " << std::endl;
+  for (auto v : vec) std::cout << v << " ";
+  std::cout << std::endl;
+  std::sort(vec.begin(), vec.end(), isLessAbs);
+  std::cout << "Content of sorted vec : " << std::endl;
+  for (auto v : vec) std::cout << v << " ";
+  std::cout << std::endl;
+  std::cout << "std::binary_search(vec.begin(), vec.end(), -5, isLessAbs) : " <<
+    std::binary_search(vec.begin(), vec.end(), -5, isLessAbs) << std::endl;
+  return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
