@@ -1,38 +1,20 @@
-﻿// minMax.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// numeric.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <sstream>
-#include <string>
+#include <array>
 #include <vector>
-#include <algorithm>
-
-std::string toString(int i) {
-  std::stringstream buff;
-  buff.str("");
-  buff << i;
-  std::string val = buff.str();
-  return val;
-}
-
-int toInt(const std::string s) {
-  std::stringstream buff;
-  buff.str("");
-  buff << s;
-  int value;
-  buff >> value;
-  return value;
-}
+#include <numeric>
 
 int main()
 {
-  std::vector<int> myInts;
-  std::vector<std::string> myStrings{ "94", "5", "39", "-4", "-49", "1001", "-7",
-                                      "23", "0", "84", "59", "96", "6", "-94", "87"};
-  std::transform(myStrings.begin(), myStrings.end(), std::back_inserter(myInts), toInt);
-  std::cout << "String to Integers myInts values : " << std::endl;
-  for (auto i : myInts) std::cout << i << " ";
-  std::cout << std::endl;
+  std::array<int, 9> arr{ 1,2,3,4,5,6,7,8,9 };
+  std::cout << "std::accumulate(arr.begin(), arr.end(), 0) : "
+    << std::accumulate(arr.begin(), arr.end(), 0) << std::endl;
+  std::cout << "std::accumulate(arr.begin(), arr.end(), 1, [](int a, int b){return a + b;}) : "
+    << std::accumulate(arr.begin(), arr.end(), 1, [](int a, int b) {return a + b; }) << std::endl;
+  std::cout << "std::accumulate(arr.begin(), arr.end(), 1, [](int a, int b){return a * b;}) : "
+    << std::accumulate(arr.begin(), arr.end(), 1, [](int a, int b) {return a * b; }) << std::endl;
   return 0;
 }
 
