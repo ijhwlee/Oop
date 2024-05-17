@@ -33,6 +33,14 @@ int main()
   std::cout << "String to Integers myInts values : " << std::endl;
   for (auto i : myInts) std::cout << i << " ";
   std::cout << std::endl;
+
+  auto paInt = std::minmax_element(myInts.begin(), myInts.end());
+  std::cout << "std::minmax_element(myInts.begin(), myInts.end()) : "
+    << "(" << *paInt.first << ", " << *paInt.second << ")" << std::endl;
+
+  auto paStr = std::minmax_element(myStrings.begin(), myStrings.end());
+  std::cout << "std::minmax_element(myStrings.begin(), myStrings.end()) : "
+    << "(" << *paStr.first << ", " << *paStr.second << ")" << std::endl;
   return 0;
 }
 
