@@ -21,6 +21,14 @@ int main()
   std::cout << std::endl;
   std::cout << "std::binary_search(vec.begin(), vec.end(), -5, isLessAbs) : " <<
     std::binary_search(vec.begin(), vec.end(), -5, isLessAbs) << std::endl;
+  auto pair = std::equal_range(vec.begin(), vec.end(), 3, isLessAbs);
+  std::cout << "First of value 3 : " <<
+    std::distance(vec.begin(), pair.first) << std::endl;
+  std::cout << "Last of value 3 : " <<
+    std::distance(vec.begin(), pair.second) << std::endl;
+  for (auto threeIt = pair.first; threeIt != pair.second; threeIt++) {
+    std::cout << *threeIt << std::endl;
+  }
   return 0;
 }
 

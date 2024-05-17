@@ -8,6 +8,7 @@
 int main()
 {
   std::vector<int> vec{ 4,3,2,1,5,6,7,9,10 };
+  std::cout << std::boolalpha;
   std::cout << "Content of vec : " << std::endl;
   for (auto v : vec) std::cout << v << " ";
   std::cout << std::endl;
