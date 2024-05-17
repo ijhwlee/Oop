@@ -8,8 +8,10 @@
 int main()
 {
   std::vector<int> vec1{ 1,1,4,3,5,8,6,7,9,2 };
-  std::vector<int> vec2{ 1,2,3 };
+  std::vector<int> vec2{ 1,2,3,10 };
   std::sort(vec1.begin(), vec1.end());
+  std::vector<int> vec{ vec1 };
+  std::cout << std::boolalpha;
   std::cout << "Content of vec1 : " << std::endl;
   for (auto v : vec1) std::cout << v << " ";
   std::cout << std::endl;
@@ -18,6 +20,67 @@ int main()
   std::cout << std::endl;
   std::cout << "std::includes(vec1.begin(), vec1.end(), vec2.begin(), vec2.end()) : " <<
     std::includes(vec1.begin(), vec1.end(), vec2.begin(), vec2.end()) << std::endl;
+  vec1.reserve(vec1.size() + vec2.size());
+  vec1.insert(vec1.end(), vec2.begin(), vec2.end());
+  std::cout << "Inserted vector : ";
+  for (auto v : vec1) std::cout << v << " ";
+  std::cout << std::endl;
+  std::inplace_merge(vec1.begin(), vec1.end() - vec2.size(), vec1.end());
+  std::cout << "Inplace merged vector : ";
+  for (auto v : vec1) std::cout << v << " ";
+  std::cout << std::endl;
+  vec2.push_back(15);
+  std::cout << "Content of vec : ";
+  for (auto v : vec) std::cout << v << " ";
+  std::cout << std::endl;
+  std::cout << "Content of vec1 : ";
+  for (auto v : vec1) std::cout << v << " ";
+  std::cout << std::endl;
+  std::cout << "Content of vec2 : ";
+  for (auto v : vec2) std::cout << v << " ";
+  std::cout << std::endl;
+
+  std::vector<int> res;
+  std::set_union(vec.begin(), vec.end(), vec2.begin(), vec2.end(),
+    std::back_inserter(res));
+  std::cout << "Union of vec and vec2 : ";
+  for (auto v : res) std::cout << v << " ";
+  std::cout << std::endl;
+
+  res={}; // res 초기화
+  std::set_intersection(vec.begin(), vec.end(), vec2.begin(), vec2.end(),
+    std::back_inserter(res));
+  std::cout << "Intersection of vec and vec2 : ";
+  for (auto v : res) std::cout << v << " ";
+  std::cout << std::endl;
+
+  res = {}; // res 초기화
+  std::set_difference(vec.begin(), vec.end(), vec2.begin(), vec2.end(),
+    std::back_inserter(res));
+  std::cout << "Difference of vec - vec2 : ";
+  for (auto v : res) std::cout << v << " ";
+  std::cout << std::endl;
+
+  res = {}; // res 초기화
+  std::set_difference(vec2.begin(), vec2.end(), vec.begin(), vec.end(),
+    std::back_inserter(res));
+  std::cout << "Difference of vec2 - vec : ";
+  for (auto v : res) std::cout << v << " ";
+  std::cout << std::endl;
+
+  res = {}; // res 초기화
+  std::set_symmetric_difference(vec.begin(), vec.end(), vec2.begin(), vec2.end(),
+    std::back_inserter(res));
+  std::cout << "Symmetric Difference of vec - vec2 : ";
+  for (auto v : res) std::cout << v << " ";
+  std::cout << std::endl;
+
+  res = {}; // res 초기화
+  std::set_symmetric_difference(vec2.begin(), vec2.end(), vec.begin(), vec.end(),
+    std::back_inserter(res));
+  std::cout << "Symmetric Difference of vec2 - vec : ";
+  for (auto v : res) std::cout << v << " ";
+  std::cout << std::endl;
   return 0;
 }
 
