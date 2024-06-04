@@ -21,10 +21,10 @@ int main()
   symPath1 /= "a";
   fs::create_symlink("a", "sandbox/syma");
   std::cout << std::boolalpha;
-  std::cout << "fs::is_directory(dir): " << fs::is_directory(dir) << std::endl;
+  std::cout << "fs::is_directory("<< dir<<"): " << fs::is_directory(dir) << std::endl;
   //std::cout << "fs::exists(symPath): " << fs::exists(symPath) << std::endl;
-  std::cout << "fs::exists(symPath1): " << fs::exists(symPath1) << std::endl;
-  std::cout << "fs::is_symlink(dir): " << fs::is_symlink(symPath) << std::endl;
+  std::cout << "fs::exists("<< symPath1<< "): " << fs::exists(symPath1) << std::endl;
+  std::cout << "fs::is_symlink(" << symPath << "): " << fs::is_symlink(symPath) << std::endl;
   for (auto& p : fs::recursive_directory_iterator("sandbox"))
   {
     std::cout << p.path() << std::endl;
