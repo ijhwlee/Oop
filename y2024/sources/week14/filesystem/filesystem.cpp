@@ -2,10 +2,35 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  std::cout << "Current path: " << fs::current_path() << std::endl;
+  std::string dir = "sandbox/a/b";
+  std::cout << "Creating directiry: " << dir << std::endl;
+  fs::create_directories(dir);
+  std::ofstream("sandbox/file1.txt");
+  fs::path symPath = fs::current_path() /= "sandbox";
+  symPath /= "syma";
+  fs::path symPath1 = fs::current_path() /= "sandbox";
+  symPath1 /= "a";
+  fs::create_symlink("a", "sandbox/syma");
+  std::cout << std::boolalpha;
+  std::cout << "fs::is_directory(dir): " << fs::is_directory(dir) << std::endl;
+  //std::cout << "fs::exists(symPath): " << fs::exists(symPath) << std::endl;
+  std::cout << "fs::exists(symPath1): " << fs::exists(symPath1) << std::endl;
+  std::cout << "fs::is_symlink(dir): " << fs::is_symlink(symPath) << std::endl;
+  for (auto& p : fs::recursive_directory_iterator("sandbox"))
+  {
+    std::cout << p.path() << std::endl;
+  }
+  fs::remove_all("sandbox");
+  return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

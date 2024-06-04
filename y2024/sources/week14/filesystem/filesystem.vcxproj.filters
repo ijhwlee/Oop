@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cp20Console.cpp">
+    <ClCompile Include="filesystem.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
