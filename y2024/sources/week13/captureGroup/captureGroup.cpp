@@ -12,20 +12,23 @@ void showCaptureGroups(const std::string& regEx, const std::string& text)
   std::smatch smatch;
   if (std::regex_search(text, smatch, rgx))
   {
-    std::cout << std::setw(14) << regEx << std::setw(12) << text
-      << std::setw(12) << smatch[0] << std::setw(10) << smatch[1]
-      << std::setw(10) << smatch[2] << std::setw(2) << smatch[3]
-      << std::setw(10) << smatch[4] << std::endl;
+    std::cout << std::setw(24) << regEx << std::setw(22) << text
+      << std::setw(22) << smatch[0] << std::setw(20) << smatch[1]
+      << std::setw(20) << smatch[2] << std::setw(2) << smatch[3]
+      << std::setw(20) << smatch[4] << std::endl;
   }
 }
 
 int main()
 {
-  std::cout << std::setw(14) << "reg Expr" << std::setw(12) << "text"
-    << std::setw(12) << "smatch[0]" << std::setw(10) << "smatch[1]"
-    << std::setw(10) << "smatch[2]" << std::setw(2) << "smatch[3]"
-    << std::setw(10) << "smatch[4]" << std::endl;
-  showCaptureGroups("abc+", "abccccc");
+  std::cout << std::setw(24) << "reg Expr" << std::setw(22) << "text"
+    << std::setw(22) << "smatch[0]" << std::setw(20) << "smatch[1]"
+    << std::setw(20) << "smatch[2]" << std::setw(2) << "smatch[3]"
+    << std::setw(20) << "smatch[4]" << std::endl;
+  showCaptureGroups(R"(abc+)", "abccccc");
+  showCaptureGroups(R"((a+)(b+)(c+))", "aaabbccc");
+  showCaptureGroups(R"([-+]?([0-9]*\.[0-9]+|[0-9]+))", "456.8326");
+  showCaptureGroups(R"((\\)(c)(i)(t)(e)(\{)[\d\w\W]*(\}))", "\\cite{alog:Mayer78, alog:Turner67}");
   return 0;
 }
 
